@@ -1,0 +1,76 @@
+{% extends "FrontEnd/base.html" %}
+{%  block content %}
+<body>
+    <div id="wrapper">
+      <div>
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+        <header class="flex  flex-row">
+            <h1 class="company-logo">Divasity</h1>
+            <nav id="main-nav">
+                <ul class="menu-items">
+                    <!-- <li class="menu-item"><a href="/">Nigeria</a></li> -->
+                    <div id="client-country-wrapper" class="flex">
+                        <div class="client-country-flag">
+                            <i class="fa fa-map"></i>
+                        </div>
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="login-container" class="flex flex-column">
+            <!-- <img src="./Mock Up/Login and sign up/WhatsApp_Image_2019-08-01_at_7.20.07_PM(1).jpeg" alt=""> -->
+            <div class="form-container flex flex-column">
+                <h1 class="title">Welcome to Divasity</h1>
+
+                <!-- <form action="" class="form">
+                    <div class="input-group">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="email">
+                            <label for="email"><i class="fa fa-user"></i></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="password">
+                            <label for="password"><i class="fa fa-key"></i></label>
+                        </div>
+                    </div>
+                    <input class="btn btn-full-width" type="submit" value="Log In">
+                </form>
+
+                <a class="text link" data-forgot-password>Forgot Password?</a>
+
+                <div class="social-login-options grid">
+                    <span class="social-login btn-sm grid"><i class="fa fa-facebook"></i><span>Login with
+                            Facebook</span></span>
+                    <span class="social-login btn-sm grid"><i class="fa fa-linkedin"></i><span>Login with
+                            LinkedIn</span></span>
+                </div>
+
+                <div class="divide-line flex flex-row">
+                    <span class="hline"></span>
+                    <p class="flex flex-column">OR</p>
+                </div>
+
+                <a href="{% url 'register' %}" class="btn btn-full-width create-account-link">create an account</a>
+            </div> -->
+        </div>
+
+        <!-- <footer>
+            <div class="privacy-and-tou flex">
+                <a href="terms-of-use.html" class="tou">terms of use</a>
+                <div class="vline"></div>
+                <a href="privacy.html" class="privacy">privacy policy</a>
+            </div>
+        </footer> -->
+    </div>
+{% endblock content %}

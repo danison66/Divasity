@@ -1,0 +1,75 @@
+{% extends "FrontEnd/base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<body>
+    <div id="wrapper">
+        <header class="flex  flex-row">
+          <h1 class="company-logo">Divasity</h1>
+          <div>
+            {% if user.is_authenticated %}
+              <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+              <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+            {% endif %}
+          </div>
+
+            <nav id="main-nav">
+                <ul class="menu-items">
+                    <div id="client-country-wrapper" class="flex">
+                        <div class="client-country-flag">
+                            <i class="fa fa-map"></i>
+                        </div>
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+          <div id="login-container" class="flex flex-column">
+            <div class="form-container flex flex-column">
+                <h1 class="title">Welcome to Divasity</h1>
+
+                <!-- Registration Form -->
+                <div class="">
+                  <div class="content-section">
+                      <form method="POST">
+                          {% csrf_token %}
+                          <fieldset class="form-group">
+                              {{ form|crispy }}
+                          </fieldset>
+                          <div class="form-group">
+                              <button class="btn btn-outline-info btn-block active" role="button" type="submit">Sign in</button>
+                          </div>
+                      </form>
+                      <div class="border-top pt-3">
+                          <br>
+                          <a class="text link" data-forgot-password href="{% url 'password_reset' %}">Forgot Password?</a>
+
+                          <div class="social-login-options grid">
+                              <span class="social-login btn-sm grid"><i class="fa fa-facebook"></i><span>Login with
+                                      Facebook</span></span>
+                              <span class="social-login btn-sm grid"><i class="fa fa-linkedin"></i><span>Login with
+                                      LinkedIn</span></span>
+                          </div>
+
+                          <div class="divide-line flex flex-row">
+                              <span class="hline"></span>
+                              <p class="flex flex-column">OR</p>
+                          </div>
+
+                          <a href="{% url 'register' %}" class="btn btn-full-width create-account-link">create an account</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+        <footer>
+            <div class="privacy-and-tou flex">
+                <a href="terms-of-use.html" class="tou">terms of use</a>
+                <div class="vline"></div>
+                <a href="privacy.html" class="privacy">privacy policy</a>
+            </div>
+        </footer>
+    </div>
+{% endblock content %}

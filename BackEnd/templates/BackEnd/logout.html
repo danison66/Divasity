@@ -1,0 +1,26 @@
+{% extends "FrontEnd/base.html" %}
+        {% block content %}
+        {% load crispy_forms_tags %}
+        <body>
+            <div id="wrapper">
+                <header class="flex  flex-row">
+                  <h1 class="company-logo">Divasity</h1>
+                  <div>
+                    <h1 class=""><a href="{% url 'login' %}">LoginBack to Divasity</a></h1>
+                  </div>
+
+                    <nav id="main-nav">
+                        <ul class="menu-items">
+                            <div id="client-country-wrapper" class="flex">
+                                <div class="client-country-flag">
+                                    <i class="fa fa-map"></i>
+                                </div>
+                                <i class="fa fa-caret-down"></i>
+                            </div>
+                        </ul>
+                    </nav>
+                </header>
+
+                  <div id="login-container" class="flex flex-column">
+            </div>
+        {% endblock content %}
